@@ -1,0 +1,328 @@
+/* ==========================================================================
+   horarios.css — grade de horários
+   Usa a casca visual de base.css. A paleta abaixo é funcional: cada cor
+   identifica uma disciplina, na grade e na legenda.
+   ========================================================================== */
+
+:root {
+  --grade-fundo: #fdf9ef;
+  --grade-linha: #e1b037;
+  --grade-risco: #eed390;
+  --grade-cabecalho: #0b322d;
+  --grade-creme: #fdf0d5;
+  --grade-agora: #a23216;
+  --grade-texto-tenue: #9c8a5c;
+}
+
+/* --------------------------------------------------------------------------
+   1. Aviso de próxima atividade
+   -------------------------------------------------------------------------- */
+
+.agora {
+  margin-bottom: 28px;
+  padding: 14px 18px;
+  background: #f2dca6;
+  border-left: 4px solid #0f433d;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.agora strong {
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   2. Legenda
+   -------------------------------------------------------------------------- */
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-bottom: 28px;
+  padding: 14px 18px;
+  background: #f2dca6;
+  border: 1px solid var(--grade-linha);
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.amostra {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. Grade semanal (telas médias e grandes)
+   -------------------------------------------------------------------------- */
+
+.grade-rolagem {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 42px repeat(6, minmax(120px, 1fr));
+  gap: 8px;
+  min-width: 780px;
+}
+
+.eixo {
+  position: relative;
+  height: 660px;
+  margin-top: 34px;
+}
+
+.eixo-hora {
+  position: absolute;
+  right: 6px;
+  transform: translateY(-50%);
+  font-size: 0.63rem;
+  color: var(--grade-texto-tenue);
+  font-variant-numeric: tabular-nums;
+}
+
+.dia {
+  display: flex;
+  flex-direction: column;
+}
+
+.dia-cabecalho {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--grade-creme);
+  background: var(--grade-cabecalho);
+  padding: 8px 0;
+  margin-bottom: 6px;
+}
+
+.dia.hoje .dia-cabecalho {
+  background: var(--grade-agora);
+}
+
+.dia.hoje .trilha {
+  border-color: var(--grade-agora);
+  border-width: 2px;
+}
+
+.trilha {
+  position: relative;
+  height: 660px;
+  background-color: var(--grade-fundo);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--grade-risco) 0,
+    var(--grade-risco) 1px,
+    transparent 1px,
+    transparent 44px
+  );
+  border: 1px solid var(--grade-linha);
+}
+
+.trilha.livre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.livre-aviso {
+  border: 1px dashed var(--grade-linha);
+  padding: 10px 14px;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #a98f4d;
+}
+
+.bloco {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  padding: 8px 10px 8px 12px;
+  overflow: hidden;
+  word-break: break-word;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.bloco:hover {
+  outline: 2px solid var(--cor-texto);
+  outline-offset: -2px;
+}
+
+.bloco-nome {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.bloco-turma {
+  display: block;
+  font-size: 0.66rem;
+  opacity: 0.85;
+}
+
+.bloco-hora {
+  display: block;
+  font-size: 0.64rem;
+  margin-top: 3px;
+  opacity: 0.9;
+  font-variant-numeric: tabular-nums;
+}
+
+.bloco-sala {
+  display: block;
+  font-size: 0.62rem;
+  font-style: italic;
+  margin-top: 2px;
+  opacity: 0.8;
+}
+
+.linha-agora {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--grade-agora);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.marca-agora {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  background: var(--grade-agora);
+  color: var(--grade-creme);
+  font-size: 0.58rem;
+  padding: 1px 4px;
+  z-index: 6;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   4. Agenda vertical (telas pequenas)
+   -------------------------------------------------------------------------- */
+
+.agenda {
+  display: none;
+}
+
+.agenda-dia + .agenda-dia {
+  margin-top: 28px;
+}
+
+.agenda-dia h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+.agenda-dia.hoje h2::after {
+  content: ' — hoje';
+  color: var(--grade-agora);
+  font-family: var(--fonte-texto);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.agenda-bloco {
+  display: flex;
+  gap: 14px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-left: 5px solid;
+}
+
+.agenda-hora {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  font-variant-numeric: tabular-nums;
+}
+
+.agenda-nome {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.agenda-detalhe {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-top: 3px;
+}
+
+.agenda-livre {
+  font-size: 0.85rem;
+  color: var(--cor-texto-tenue);
+}
+
+/* --------------------------------------------------------------------------
+   5. Cores das disciplinas
+   -------------------------------------------------------------------------- */
+
+.ext1        { background: #0f433d; border-left-color: #071d1b; color: #fdf0d5; }
+.ext2-am     { background: #155b53; border-left-color: #0b322d; color: #fdf0d5; }
+.ext2-pm     { background: #1a746a; border-left-color: #114b44; color: #fdf0d5; }
+.novastec    { background: #2ab7a7; border-left-color: #1c7d72; color: #2e2a24; }
+.semiot-am   { background: #7c5d13; border-left-color: #47350b; color: #fdf0d5; }
+.semiot-pm   { background: #e8c368; border-left-color: #cc991e; color: #2e2a24; }
+.projexp     { background: #a23216; border-left-color: #631f0d; color: #fdf0d5; }
+.designprod  { background: #e76e50; border-left-color: #b43718; color: #2e2a24; }
+.orient      { background: #bcf0ea; border-left-color: #50d7c8; color: #2e2a24; }
+
+/* --------------------------------------------------------------------------
+   6. Responsivo — troca grade por agenda
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .grade-rolagem { display: none; }
+  .agenda { display: block; }
+  .legenda { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   7. Impressão — grade em paisagem, sem cromo do site
+   -------------------------------------------------------------------------- */
+
+@media print {
+  @page { size: landscape; margin: 10mm; }
+
+  body { padding: 0; background: #fff; }
+
+  .nao-imprimir,
+  .nav-site,
+  .agenda,
+  .rodape { display: none !important; }
+
+  .grade-rolagem { overflow: visible; display: block; }
+  .grade { min-width: 0; }
+  .linha-agora,
+  .marca-agora { display: none; }
+
+  .cabecalho { margin-bottom: 20px; }
+  .cabecalho h1 { font-size: 1.8rem; }
+
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

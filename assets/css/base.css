@@ -1,0 +1,342 @@
+/* ==========================================================================
+   base.css — identidade compartilhada por todas as páginas do site
+   Materiais das disciplinas — Edmilson Miranda Jr.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  --fonte-titulo: 'DM Serif Display', Georgia, serif;
+  --fonte-texto: 'DM Sans', system-ui, sans-serif;
+
+  --cor-fundo: #f8f8f6;
+  --cor-superficie: #fff;
+  --cor-texto: #111;
+  --cor-texto-suave: #777;
+  --cor-texto-tenue: #999;
+  --cor-linha: rgba(0, 0, 0, 0.08);
+  --cor-linha-forte: rgba(0, 0, 0, 0.16);
+  --cor-destaque: #a23216;
+
+  --largura-conteudo: 820px;
+  --largura-larga: 1180px;
+  --raio: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset e base
+   -------------------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+  padding: 48px 8vw 80px;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  max-width: var(--largura-conteudo);
+  margin: auto;
+}
+
+.container-largo {
+  max-width: var(--largura-larga);
+  margin: auto;
+}
+
+a {
+  color: inherit;
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--cor-texto);
+  outline-offset: 3px;
+}
+
+.oculto-visual,
+.pular-para-conteudo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.pular-para-conteudo:focus {
+  position: static;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  clip-path: none;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navegação principal
+   -------------------------------------------------------------------------- */
+
+.nav-site {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 18px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+.nav-marca {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.nav-site a:not(.nav-marca) {
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0.55;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: opacity 0.2s ease;
+}
+
+.nav-site a:not(.nav-marca):hover {
+  opacity: 1;
+}
+
+.nav-site a[aria-current='page'] {
+  opacity: 1;
+  border-bottom-color: var(--cor-texto);
+}
+
+/* --------------------------------------------------------------------------
+   4. Cabeçalho de página
+   -------------------------------------------------------------------------- */
+
+.cabecalho {
+  margin-bottom: 48px;
+}
+
+.cabecalho h1 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  line-height: 0.98;
+  margin-bottom: 18px;
+}
+
+.cabecalho p {
+  max-width: 520px;
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   5. Controles (busca e filtros)
+   -------------------------------------------------------------------------- */
+
+.controles {
+  margin-bottom: 40px;
+}
+
+.campo-busca {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-linha-forte);
+  border-radius: var(--raio);
+  padding: 13px 16px;
+}
+
+.campo-busca::placeholder {
+  color: var(--cor-texto-tenue);
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.filtro {
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  background: transparent;
+  border: 1px solid var(--cor-linha-forte);
+  border-radius: 999px;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.filtro:hover {
+  border-color: var(--cor-texto);
+  color: var(--cor-texto);
+}
+
+.filtro[aria-pressed='true'] {
+  background: var(--cor-texto);
+  border-color: var(--cor-texto);
+  color: var(--cor-fundo);
+}
+
+.contagem {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: var(--cor-texto-tenue);
+}
+
+/* --------------------------------------------------------------------------
+   6. Lista de materiais
+   -------------------------------------------------------------------------- */
+
+.grupo-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin-top: 50px;
+  margin-bottom: 4px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--cor-linha);
+}
+
+.lista-materiais > .grupo-titulo:first-child {
+  margin-top: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+.item-info h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.item-info p {
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--cor-texto-tenue);
+}
+
+.selo {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+  border: 1px solid var(--cor-linha-forte);
+  border-radius: var(--raio);
+  padding: 3px 7px;
+}
+
+.acao {
+  flex-shrink: 0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.72;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.acao:hover {
+  opacity: 0.5;
+}
+
+.acao::after {
+  content: ' →';
+}
+
+.vazio {
+  padding: 40px 0;
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Rodapé
+   -------------------------------------------------------------------------- */
+
+.rodape {
+  margin-top: 96px;
+  padding-top: 24px;
+  border-top: 1px solid var(--cor-linha);
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.rodape a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--cor-linha-forte);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsivo
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  body {
+    padding: 32px 6vw 64px;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .nav-site {
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

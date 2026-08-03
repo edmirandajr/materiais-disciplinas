@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Horários — Edmilson Miranda Jr.</title>
+  <meta name="description" content="Grade de aulas e horários de orientação do semestre 2026.2 — Edmilson Miranda Jr., UNI7.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Horários de aula e orientação — Edmilson Miranda Jr.">
+  <meta property="og:description" content="Grade da semana com aulas, turmas, salas e horários de atendimento.">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f8f8f6'/><text x='50' y='72' font-size='68' font-family='Georgia,serif' text-anchor='middle' fill='%23111'>M</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/horarios.css">
+</head>
+
+<body>
+
+  <div class="container-largo">
+
+    <a class="pular-para-conteudo" href="#grade">Pular para o conteúdo</a>
+
+    <nav class="nav-site" aria-label="Navegação principal">
+      <a class="nav-marca" href="index.html">Edmilson Miranda Jr.</a>
+      <a href="index.html">Materiais</a>
+      <a href="horarios.html" aria-current="page">Horários</a>
+    </nav>
+
+    <header class="cabecalho">
+      <h1>Horários</h1>
+      <p>
+        Aulas e horários de orientação do semestre <span id="semestre">2026.2</span>,
+        de segunda a sábado. Passe o mouse sobre um bloco para ver turma, sala e detalhes.
+      </p>
+    </header>
+
+    <p class="agora nao-imprimir" id="agora" role="status"></p>
+
+    <div class="legenda nao-imprimir" id="legenda"></div>
+
+    <main>
+      <div class="grade-rolagem">
+        <div class="grade" id="grade" tabindex="-1"></div>
+      </div>
+
+      <div class="agenda" id="agenda"></div>
+
+      <noscript>
+        <p class="vazio">Esta página precisa de JavaScript para exibir a grade de horários.</p>
+      </noscript>
+    </main>
+
+    <footer class="rodape">
+      Edmilson Miranda Jr. — <a href="index.html">materiais das disciplinas</a>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/horarios.js"></script>
+
+</body>
+</html>
