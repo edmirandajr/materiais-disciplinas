@@ -7,9 +7,9 @@
    Campos:
      titulo      texto exibido
      descricao   uma ou duas frases sobre o material
-     categoria   'photoshop' | 'publicidade' | 'tcc'   (ver CATEGORIAS)
+     categoria   'photoshop' | 'publicidade' | 'tcc' | 'design'   (ver CATEGORIAS)
      tipo        'PDF' | 'PPTX' | 'DOCX' | 'PSD' | 'JPG' | 'PNG'
-                 | 'Slides' | 'Vídeo'
+                 | 'ZIP' | 'Slides' | 'Vídeo'
      href        caminho do arquivo em arquivos/… ou URL completa
      tamanho     opcional; '4,0 MB'. Use em arquivos hospedados aqui.
      externo     opcional; true para links (slides, vídeos) — abre em nova aba
@@ -20,6 +20,7 @@ const CATEGORIAS = [
   { id: 'photoshop', rotulo: 'Oficina de Photoshop', titulo: 'Oficina de Photoshop — CAPACITA 2026' },
   { id: 'publicidade', rotulo: 'Criação Publicitária', titulo: 'Criação Publicitária — Campanha AV2' },
   { id: 'tcc', rotulo: 'TCC', titulo: 'TCC e Projeto Experimental' },
+  { id: 'design', rotulo: 'Design e Produção Gráfica', titulo: 'Design e Produção Gráfica — 6º semestre' },
 ];
 
 const MATERIAIS = [
@@ -179,6 +180,17 @@ const MATERIAIS = [
     tipo: 'PPTX',
     href: 'arquivos/tcc/modelo-pitch-tcc-uni7.pptx',
     tamanho: '220 KB',
+  },
+
+  /* --- Design e Produção Gráfica ------------------------------------------ */
+  {
+    titulo: 'Aula 09 — arquivos da prática',
+    descricao: 'Pacote compactado com os arquivos da prática de Photoshop, Illustrator e InDesign. Arquivo grande: prefira baixar em rede Wi-Fi estável.',
+    categoria: 'design',
+    tipo: 'ZIP',
+    href: 'https://github.com/edmirandajr/materiais-disciplinas/releases/download/dpg-aula-09/Aula.09.zip',
+    tamanho: '496 MB',
+    atualizado: '2026-11-17',
   },
 ];
 
