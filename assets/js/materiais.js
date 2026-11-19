@@ -204,6 +204,24 @@ const MATERIAIS = [
     tamanho: '76 KB',
     atualizado: '2026-11-19',
   },
+  {
+    titulo: 'Lab 5 — Slides: do protótipo v1 ao site final',
+    descricao: 'Apresentação da aula de finalização do site: checklist, papéis da equipe e as cinco rodadas de produção.',
+    categoria: 'novas-tecnologias',
+    tipo: 'PPTX',
+    href: 'arquivos/novas-tecnologias/slides-lab5-do-prototipo-ao-site-final.pptx',
+    tamanho: '2,3 MB',
+    atualizado: '2026-11-19',
+  },
+  {
+    titulo: 'Lab 5 — Roteiro da aula',
+    descricao: 'Roteiro completo do laboratório, com o passo a passo de cada rodada, pedidos ao Copilot e soluções para os problemas mais comuns.',
+    categoria: 'novas-tecnologias',
+    tipo: 'DOCX',
+    href: 'arquivos/novas-tecnologias/roteiro-lab5-do-prototipo-ao-site-final.docx',
+    tamanho: '23 KB',
+    atualizado: '2026-11-19',
+  },
 ];
 
 /* ==========================================================================
