@@ -7,7 +7,7 @@
    Campos:
      titulo      texto exibido
      descricao   uma ou duas frases sobre o material
-     categoria   'photoshop' | 'publicidade' | 'tcc' | 'design'   (ver CATEGORIAS)
+     categoria   'photoshop' | 'publicidade' | 'tcc' | 'design' | 'novas-tecnologias'   (ver CATEGORIAS)
      tipo        'PDF' | 'PPTX' | 'DOCX' | 'PSD' | 'JPG' | 'PNG'
                  | 'ZIP' | 'Slides' | 'Vídeo'
      href        caminho do arquivo em arquivos/… ou URL completa
@@ -21,6 +21,7 @@ const CATEGORIAS = [
   { id: 'publicidade', rotulo: 'Criação Publicitária', titulo: 'Criação Publicitária — Campanha AV2' },
   { id: 'tcc', rotulo: 'TCC', titulo: 'TCC e Projeto Experimental' },
   { id: 'design', rotulo: 'Design e Produção Gráfica', titulo: 'Design e Produção Gráfica — 6º semestre' },
+  { id: 'novas-tecnologias', rotulo: 'Novas Tecnologias', titulo: 'Novas Tecnologias em Comunicação — 8º semestre' },
 ];
 
 const MATERIAIS = [
@@ -191,6 +192,17 @@ const MATERIAIS = [
     href: 'https://github.com/edmirandajr/materiais-disciplinas/releases/download/dpg-aula-09/Aula.09.zip',
     tamanho: '496 MB',
     atualizado: '2026-11-17',
+  },
+
+  /* --- Novas Tecnologias em Comunicação ----------------------------------- */
+  {
+    titulo: 'Lab 5 — Guia de prompts para o Copilot',
+    descricao: 'Prompt de contexto e prompts iniciais de cada rodada (conteúdo, imagens, identidade visual, interatividade e métricas) para finalizar o site do Projeto Multimidiático.',
+    categoria: 'novas-tecnologias',
+    tipo: 'PDF',
+    href: 'arquivos/novas-tecnologias/guia-de-prompts-lab5.pdf',
+    tamanho: '76 KB',
+    atualizado: '2026-11-19',
   },
 ];
 

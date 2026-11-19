@@ -32,6 +32,7 @@ arquivos/
   photoshop/             oficina CAPACITA 2026
   publicidade/           Criação Publicitária — campanha AV2
   tcc/                   TCC e Projeto Experimental
+  novas-tecnologias/     Novas Tecnologias em Comunicação — Projeto Multimidiático
 ```
 
 ## Como adicionar um material
