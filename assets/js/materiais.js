@@ -185,6 +185,15 @@ const MATERIAIS = [
 
   /* --- Design e Produção Gráfica ------------------------------------------ */
   {
+    titulo: 'Aula de 24/11 — Primeiros passos no InDesign: da capa à página',
+    descricao: 'Slides da aula final de laboratório: interface, criação de documento A5, inserção da capa do Illustrator, texto encadeado, imagens e exportação em PDF de impressão. Usa os arquivos do pacote da Aula 09.',
+    categoria: 'design',
+    tipo: 'PDF',
+    href: 'arquivos/design/primeiros-passos-no-indesign-da-capa-a-pagina.pdf',
+    tamanho: '3,3 MB',
+    atualizado: '2026-11-24',
+  },
+  {
     titulo: 'Aula 09 — arquivos da prática',
     descricao: 'Pacote compactado com os arquivos da prática de Photoshop, Illustrator e InDesign. Arquivo grande: prefira baixar em rede Wi-Fi estável.',
     categoria: 'design',
