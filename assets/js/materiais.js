@@ -222,6 +222,24 @@ const MATERIAIS = [
     tamanho: '2,4 MB',
     atualizado: '2026-11-19',
   },
+  {
+    titulo: 'Aula final — Slides: passo a passo para entregar o site',
+    descricao: 'Passos curtos e numerados para subir as imagens, corrigir caminhos, testar, publicar e postar o link do site no Classroom.',
+    categoria: 'novas-tecnologias',
+    tipo: 'PDF',
+    href: 'arquivos/novas-tecnologias/slides-aula-final-entrega-do-site.pdf',
+    tamanho: '105 KB',
+    atualizado: '2026-11-26',
+  },
+  {
+    titulo: 'Aula final — Guia da equipe: terminar, testar e entregar',
+    descricao: 'Roteiro completo da aula final com os horários, o passo a passo das imagens, prompts curtos para o Claude, soluções para os problemas comuns e o checklist de entrega.',
+    categoria: 'novas-tecnologias',
+    tipo: 'PDF',
+    href: 'arquivos/novas-tecnologias/guia-aula-final-entrega-do-site.pdf',
+    tamanho: '203 KB',
+    atualizado: '2026-11-26',
+  },
 ];
 
 /* ==========================================================================
