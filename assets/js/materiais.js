@@ -240,6 +240,15 @@ const MATERIAIS = [
     tamanho: '203 KB',
     atualizado: '2026-11-26',
   },
+  {
+    titulo: 'Perfis compartilhados com Firebase — passo a passo',
+    descricao: 'Como ligar o site a um banco de dados gratuito (Firebase Realtime Database), com ajuda do Claude, para que todos os visitantes vejam os mesmos perfis.',
+    categoria: 'novas-tecnologias',
+    tipo: 'PDF',
+    href: 'arquivos/novas-tecnologias/firebase-perfis-compartilhados.pdf',
+    tamanho: '77 KB',
+    atualizado: '2026-11-26',
+  },
 ];
 
 /* ==========================================================================
